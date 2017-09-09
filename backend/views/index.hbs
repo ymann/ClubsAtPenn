@@ -3,29 +3,29 @@
     <h3>Insert Data</h3>
     <form action="/insert" method="post">
         <div class="input">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
         </div>
         <div class="input">
-            <label for="content">Content</label>
-            <input type="text" id="content" name="content">
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description">
         </div>
         <div class="input">
-            <label for="numMembers">Author</label>
-            <input type="text" id="numMembers" name="numMembers">
+            <label for="url">URL</label>
+            <input type="text" id="url" name="url">
         </div>
         <button type="submit">INSERT</button>
     </form>
 </section>
 <section class="get">
     <h3>Get Data</h3>
-    <a href="/get-data">LOAD DATA</a>
+    <a href="/organizations">LOAD DATA</a>
     <div>
         {{# each clubs }}
             <article class="club">
-                <div>Title: {{ this.title }}</div>
-                <div>Content: {{ this.content }}</div>
-                <div>Author: {{ this.numMembers }}</div>
+                <div>Name: {{ this.title }}</div>
+                <div>Description: {{ this.content }}</div>
+                <div>URL: {{ this.numMembers }}</div>
                 <div>ID: {{ this._id }}</div>
             </article>
         {{/each}}
@@ -39,16 +39,16 @@
             <input type="text" id="id" name="id">
         </div>
         <div class="input">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
         </div>
         <div class="input">
-            <label for="content">Content</label>
-            <input type="text" id="content" name="content">
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description">
         </div>
         <div class="input">
-            <label for="numMembers">Author</label>
-            <input type="text" id="numMembers" name="numMembers">
+            <label for="url">URL</label>
+            <input type="text" id="url" name="url">
         </div>
         <button type="submit">UPDATE</button>
     </form>

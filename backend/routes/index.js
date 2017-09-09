@@ -3,7 +3,7 @@ var router = express.Router();
 var mongo = require('mongodb').MongoClient;
 var assert = require('assert');
 
-var url = 'mongodb://localhost:27017/test';
+var url = 'mongodb://localhost:27017/organizations';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,17 +11,17 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/get-data', function(req, res, next) {
+router.get('/organizations', function(req, res, next) {
     var resultArray = [];
     mongo.connect(url, function(err, db) {
         assert.equal(null, err);
-        var cursor = db.collection('club-data').find();
+        var cursor = db.collection('clubs').find();
         cursor.forEach(function(doc, err) {
             assert.equal(null, err);
             resultArray.push(doc);
         }, function() {
             db.close();
-            res.render('index', {clubs: resultArray});
+            res.render('clubs', {clubs: resultArray});
         });
     });
 });
@@ -30,12 +30,13 @@ router.post('/insert', function(req, res, next) {
     var club = {
         name: req.body.name,
         description: req.body.description,
-        numMembers: req.body.numMembers
+        url: req.body.url,
+        tags: req.body.tags
     };
 
     mongo.connect(url, function(err, db) {
         assert.equal(null, err);
-        db.collection('club-data').insertOne(club, function(err, res) {
+        db.collection('clubs').insertOne(club, function(err, res) {
             assert.equal(null, err);
             console.log('Item Inserted');
             db.close();
@@ -43,11 +44,6 @@ router.post('/insert', function(req, res, next) {
     });
 
     res.redirect('/');
-});
-
-//====================================================
-router.get('/:clubName', function(req, res, next) {
-    res.render('club', {title: req.params.clubName});
 });
 
 module.exports = router;
