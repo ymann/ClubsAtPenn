@@ -3,8 +3,8 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/stylesheets/bootstrap-css/bootstrap.css">
-    <link rel="stylesheet" href="public/stylesheets/valencia-css.css">
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/bootstrap-css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/valencia-css.css">
 </head>
 
 <body>
@@ -26,16 +26,16 @@
     </div>
     <br>
     <div class="col-md-9">
+        {{# each clubs }}
         <div class="card">
             <div class="card-block">
-                {{# each clubs }}
                     <a href="#"><h4 class="card-title">{{ name }}</h4></a>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <p class="card-text">{{ description }}</p>
                     <a href="#" class="card-link">{{ url }}</a>
-                {{/each}}
             </div>
         </div>
+        {{/each}}
     </div>
 </div>
 </div>
