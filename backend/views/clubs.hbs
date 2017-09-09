@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/bootstrap-css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/valencia-css.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="page-header" style="margin-top:30px;margin-bottom:50px;">
+        <h1>All organizations</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+
+            <div class="container" "left-filter">
+            <div class="card">
+                <div class="card-block">
+                    <a href="#"><h4 class="card-title">Filters</h4></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="col-md-9">
+        {{# each clubs }}
+        <div class="card">
+            <div class="card-block">
+                    <a href="#"><h4 class="card-title">{{ name }}</h4></a>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">{{ description }}</p>
+                    <a href="#" class="card-link">{{ url }}</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+</div>
+</body>
+
+</html>
