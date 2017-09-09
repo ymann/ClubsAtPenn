@@ -11,6 +11,7 @@
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "express-handlebars": "^3.0.0",
+    "kerberos": "0.0.23",
     "mongo-db": "^1.0.2",
     "mongodb": "^2.2.31",
     "morgan": "~1.8.1",
