@@ -26,6 +26,23 @@ router.get('/organizations', function(req, res, next) {
     });
 });
 
+router.get('/organizations/:id', function(req, res, next) {
+    var returnDoc = null;
+    mongo.connect(url, function(err, db) {
+        assert.equal(null, err);
+        var cursor = db.collection('clubs').find();
+        cursor.forEach(function(doc, err) {
+            assert.equal(null, err);
+            if(doc._id == req.params.id) {
+                returnDoc = doc;
+            }
+        }, function() {
+            db.close();
+            res.render('club-page', {club: returnDoc});
+        });
+    });
+});
+
 router.post('/insert', function(req, res, next) {
     var club = {
         name: req.body.name,
