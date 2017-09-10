@@ -1,2 +1,6 @@
-# ClubsAtPenn
-Website for clubs at UPenn
+# ClubHub
+A website to facilitate community building in academic institutions
+
+## Setup
+The DB is not yet on the cloud. To run locally, 
+navigate to 'main' directory and run "mongod --dbpath ./data/db"
