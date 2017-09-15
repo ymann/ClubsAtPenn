@@ -5,6 +5,36 @@
         <link rel="stylesheet" type="text/css" href="../public/stylesheets/bootstrap-css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="../public/stylesheets/valencia-css.css">
         <title>Organizations</title>
+        
+        <!--test sticky to top js-->
+        <script type='text/javascript'>
+            var startFilterCardPos=-1;
+            window.onscroll=function(){
+                var filter = document.getElementById('filterCard');
+                if(startFilterCardPos<0)startFilterCardPos=findPosY(filter);
+
+                if(pageYOffset>startFilterCardPos){
+                    filter.style.position='fixed';
+                    filter.style.top=0;
+                } else{
+                    filter.style.position='relative';
+                }
+            };
+
+            function findPosY(obj) {
+                var curtop = 0;
+                if (typeof (obj.offsetParent) != 'undefined' && obj.offsetParent) {
+                    while (obj.offsetParent) {
+                        curtop += obj.offsetTop;
+                        obj = obj.offsetParent;
+                    }
+                    curtop += obj.offsetTop;
+                }
+                else if (obj.y)
+                    curtop += obj.y;
+                return curtop;
+            }
+    </script>
     </head>
 
     <body>
@@ -33,7 +63,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="card">
+                    <div class="card" id="filterCard">
                         <h5 class="card-header">Filter by tags</h5>
                         <div class="card-block">
                             <div class="checkbox">
@@ -91,6 +121,25 @@
                             <a href="http://upenn.clubrunning.org/index.html" target="_blank">Website</a>
                         </div>
                     </div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                              </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
