@@ -20,7 +20,6 @@ body {
     color: #555;
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
-    font-size: 20px;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
 }
@@ -177,8 +176,8 @@ input[type=submit]:active {
 .main-nav {
     float: right;
     list-style: none;
-    margin-top: 35px;
-    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     margin-left: 900px;
 }
 
