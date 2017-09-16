@@ -1,6 +1,7 @@
 /* 
 Ebony color: #22313F
 Red color: #D64541
+Light blue: #5bc0de
 */
 
 
@@ -16,12 +17,13 @@ Red color: #D64541
 
 html,
 body {
-    background-color: #22313F;
+    /*background-color: #22313F;*/
     color: #555;
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+    background-image: url(../../images/cream_pixels.png)
 }
 
 .clearfix {zoom: 1}
