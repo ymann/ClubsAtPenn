@@ -1,6 +1,7 @@
 /* 
 Ebony color: #22313F
 Red color: #D64541
+Light blue: #5bc0de
 */
 
 
@@ -16,13 +17,13 @@ Red color: #D64541
 
 html,
 body {
-    background-color: #22313F;
+    /*background-color: #37515F;*/
     color: #555;
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
-    font-size: 20px;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+    background-image: url(../../images/ignasi_pattern_s.png)
 }
 
 .clearfix {zoom: 1}
@@ -107,7 +108,7 @@ h2:after {
 
 a:link,
 a:visited {
-    color: #D64541;
+    color: #5bc0de;
     text-decoration: none;
     padding-bottom: 1px;
     border-bottom: 1px solid #f4f4f4;
@@ -121,8 +122,55 @@ a:active {
     border-bottom: 1px solid transparent;
 }
 
-/*------ BUTTONS ------*/
+a.btn {
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+        -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    -webkit-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
 
+a.btn-outline {
+    color: #FFF;
+    background-image: none;
+    background-color: transparent;
+    border-color: #FFF;
+}
+
+/* light blue #5bc0de */
+
+a.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
+}
+
+a.btn-lightBlue {
+    color: #5bc0de;
+    border-color: #5bc0de;
+}
+
+a.btn-outline:hover {
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #2aabd2;
+}
+
+
+/*------ BUTTONS ------*/
+/* commenting out to figure out btn-small bootstrap confounding
 .btn:link,
 .btn:visited,
 input[type=submit] {
@@ -167,7 +215,7 @@ input[type=submit]:active {
     border: 1px solid #f4f4f4;
     color: #22313F;
 }
-
+*/
 
 /* -------------------------------------------------- */
 /* HEADER */
@@ -177,8 +225,8 @@ input[type=submit]:active {
 .main-nav {
     float: right;
     list-style: none;
-    margin-top: 35px;
-    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     margin-left: 900px;
 }
 
